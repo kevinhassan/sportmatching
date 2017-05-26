@@ -1,0 +1,46 @@
+<div class="ui main container">
+        <div class="ui stackable middle aligned two column grid">
+            <div class="row">
+                <div class="eleven wide column">
+                    <div id="mapid"></div>
+                </div>
+                <div class="five wide column">
+                    <div class="ui card" ng-show="isShow">
+                        <form id="loginForm" class="ui form attached fluid segment">
+                            <div class="description">
+                                <div class="content">
+                                    <div class="header">{{terrain.nom}}</div>
+                                </div>
+                                <div class="ui stacked">
+                                    <label>Latitude</label>
+                                    <div class="field">
+                                        <div class="ui transparent disabled input">
+                                            <input type="text" name="longitude" ng-value="coords.longitude" ng-model="terrain.localisation.longitude">
+                                        </div>
+                                    </div>
+                                    <label>Longitude</label>
+                                    <div class="field">
+                                        <div class="ui transparent disabled input">
+                                            <input type="text" name="latitude" ng-value="coords.latitude" ng-model="terrain.localisation.latitude">
+                                        </div>
+                                    </div>
+                                    <label>Type de sport :</label>
+                                    <div class="required field">
+                                        <select data-ng-options="sport as sport.nom for sport in sports track by sport.id " ng-model="terrain.sport"></select>
+                                    </div>
+                                    <label>Nom du terrain :</label>
+                                    <div class="field">
+                                        <div class="ui transparent input">
+                                            <input type="text" name="nom" ng-model="terrain.nom">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ui divider"></div>
+                            <button ng-click="addTerrain()" class="ui fluid large blue submit right labeled icon button"><i class="save icon"></i>Enregistrer</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

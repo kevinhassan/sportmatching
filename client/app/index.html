@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="fr" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="fr" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="fr" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="fr" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>SportMatching</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/semantic/dist/semantic.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css">
+  <link rel="stylesheet" href="bower_components/Leaflet.EasyButton/src/easy-button.css">
+  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+  <div ng-include="'partials/navbar.html'" ng-controller="HomeCtrl"></div>
+  <ng-view></ng-view>
+  <div class="ui inverted vertical footer segment" ng-include="'partials/footer.html'"></div>
+
+  <!-- Dependancies injection -->
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/semantic/dist/semantic.min.js"></script>
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script type="text/javascript" src="bower_components/leaflet/dist/leaflet.js"></script>
+  <script type="text/javascript" src="bower_components/Leaflet.EasyButton/src/easy-button.js"></script>
+  <!-- Angular Injection-->
+  <script src="app.js"></script>
+  <script src="components/home/home.controller.js"></script>
+  <script src="components/register/register.controller.js"></script>
+  <script src="components/register/register.factory.js"></script>
+  <script src="components/register/register.service.js"></script>
+  <script src="components/auth/auth.controller.js"></script>
+  <script src="components/auth/auth.factory.js"></script>
+  <script src="components/terrain/terrain.factory.js"></script>
+  <script src="components/terrain/sport.factory.js"></script>
+  <script src="components/notification/notification.controller.js"></script>
+  <script src="components/notification/notification.factory.js"></script>
+  <script src="components/profile/profile.controller.js"></script>
+  <script src="components/profile/profile.factory.js"></script>
+  <script src="components/dashboard/dashboard.controller.js"></script>
+  <script src="components/dashboard/dashboard.factory.js"></script>
+  <script src="components/dashboard/dashboard.service.js"></script>
+  <script src="components/attente/attente.controller.js"></script>
+  <script src="components/attente/attente.factory.js"></script>
+  <script src="components/partie/partie.controller.js"></script>
+  <script src="components/partie/partie.factory.js"></script>
+
+  <script src="assets/js/navbar.js"></script>
+</body>
+</html>

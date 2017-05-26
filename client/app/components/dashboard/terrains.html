@@ -1,0 +1,60 @@
+<div class="ui main container">
+    <h1 class="ui center aligned icon header">
+        <i class="circular inverted blue building icon"></i>
+        <div class="content">
+            <div class="ui horizontal divider">Gestion des terrains</div>
+        </div>
+    </h1>
+    <div class="ui stackable equal width centered grid">
+        <div class="row">
+            <div class="ui search">
+                <div class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Rechercher...">
+                    <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+            <table class="ui blue inverted tablet center aligned unstackable selectable table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Nom</th>
+                    <th>Sport</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="terrain in terrains">
+                <tr>
+                    <td class="collapsing">
+                        <div class="ui fitted slider checkbox">
+                            <input type="checkbox" ng-model="terrain.selected" ng-value="terrain.id"> <label></label>
+                        </div>
+                    </td>
+                    <td>{{terrain.nom}}</td>
+                    <td>{{terrain.sport.nom}}</td>
+                </tr>
+                </tbody>
+                <tfoot class="full-width">
+                <tr>
+                    <th colspan="16">
+                        <div class="ui left aligned white inverted tiny button" ng-click="supprimerTerrains()">
+                            Supprimer
+                        </div>
+                        <div class="ui tiny button" ng-click="selectAll()" id="selectAll">
+                            Selectionner tout
+                        </div>
+                        <div class="ui tiny disabled button" ng-click="deselectAll()" id="deselectAll">
+                            Deselectionner tout
+                        </div>
+                    </th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="ui center aligned text container buttonDashboard-return">
+    <a class="ui green left labeled icon huge button" href="#dashboard/villes">
+        <i class="left arrow icon"></i>
+        Précédent
+    </a>
+</div>

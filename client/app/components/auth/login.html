@@ -1,0 +1,33 @@
+<div class="ui main text container">
+    <div class="ui middle aligned center aligned grid">
+        <div class="row">
+            <div class="column">
+                <h2 class="ui center aligned icon blue header">
+                    <i class="circular user icon"></i>
+                    Se connecter
+                </h2>
+                <form id="loginForm" class="ui form attached fluid segment">
+                    <div class="ui stacked">
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="user icon"></i>
+                                <input type="text" name="mail" placeholder="Adresse e-mail" ng-model="utilisateur.mail" ng-value="utilisateur.mail">
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui left icon input">
+                                <i class="lock icon"></i>
+                                <input type="password" name="mdp" placeholder="Mot de passe" ng-model="utilisateur.mdp">
+                            </div>
+                        </div>
+                        <div class="ui error message"></div>
+                        <button ng-click="login()" class="ui fluid large blue submit right labeled icon button"><i class="send icon"></i>Se connecter</button>
+                    </div>
+                </form>
+                <div class="ui bottom attached info message">
+                    Nouveau ? <a href="#register">S'enregistrer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

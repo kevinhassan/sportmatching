@@ -1,0 +1,28 @@
+<div class="ui main text container">
+    <div class="ui icon message">
+        <i class="inbox icon"></i>
+        <div class="content">
+            <div class="header">
+                Boîte de notifications
+            </div>
+            <p>Retrouvez ici les notifications reçues pour les parties à proximité</p>
+        </div>
+    </div>
+    <div ng-repeat="notification in notifications">
+        <div class="ui info message">
+            <i ng-click="deleteNotif(notification.id)" class="close icon"></i>
+            <div class="header">
+                {{notification.contenu}}
+            </div>
+            <ul class="list">
+                <li>Lieu: {{notification.partie.terrain.nom }}</li>
+                <li>Date: {{notification.partie.heure_prise|date:"dd.MM.y"}}</li>
+                <li>Heure de début : {{notification.partie.heure_prise|date: "shortTime"}}</li>
+                <li>Heure de fin : {{notification.partie.heure_rendu|date: "shortTime"}}</li>
+                <li>Nombre de participant : {{notification.partie.nbr_participant}}</li>
+                <button class="ui green inverted button">Rejoindre la partie</button>
+            </ul>
+        </div>
+        <div class="ui hidden divider"></div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<!-- Sidebar Menu -->
+<nav class="ui left vertical inverted labeled icon thin sidebar menu" ng-controller="main">
+    <a ng-class="{active:isActive('/')}" class="item" href="#/" ng-hide="showMenu"><i class="home icon"></i>Accueil</a>
+    <a ng-class="{active:isActive('/home-connect')}" class="item" href="#home-connect" ng-show="showMenu"><i class="map icon"></i>Accueil</a>
+    <a ng-class="{active:isActive('/register')}" class="item" href="#register" ng-hide="showMenu"><i class="save icon"></i>S'enregistrer</a>
+    <a ng-class="{active:isActive('/parties')}" class="item" href="#parties" ng-show="showMenu"><i class="game icon"></i>&nbsp;Mes parties</a>
+    <a ng-class="{active:isActive('/attente')}" class="item" href="#attente" ng-show="showMenu"><i class="wait icon"></i>{{count}}&nbsp;Attente</a>
+    <a ng-class="{active:isActive('/notifications')}" class="item" href="#notifications" ng-show="showMenu"><i class="info icon"></i>Notifications</a>
+    <a ng-class="{active:isActive('/dashboard')}" class="item" href="#dashboard" ng-show="showMenuAdmin"><i class="dashboard icon"></i>Dashboard</a>
+    <a ng-class="{active:isActive('/monprofil')}" class="item" href="#monprofil" ng-show="showMenu"><i class="user icon"></i>Mon profil</a>
+    <a class="item" ng-click="logout()" ng-show="showMenu"><i class="sign in icon"></i>Déconnexion</a>
+    <a ng-class="{active:isActive('/login')}" class="item" href="#login" ng-hide="showMenu"><i class="sign in icon"></i>Connexion</a>
+</nav>
+<nav class="ui fixed inverted borderless menu" ng-controller="main">
+    <div class="ui container">
+        <div class="ui compact icon large secondary inverted pointing menu">
+            <a class="toc item">
+                <i class="sidebar icon"></i>
+                <span class="text">Menu</span>
+            </a>
+            <a ng-class="{active:isActive('/')}" class="item" href="#/" ng-hide="showMenu"><i class="home icon"></i>Accueil</a>
+            <a ng-class="{active:isActive('/home-connect')}" class="item" href="#home-connect" ng-show="showMenu"><i class="map icon"></i>&nbsp;Accueil</a>
+        </div>
+        <div class="right menu">
+            <a ng-class="{active:isActive('/register')}" class="item" href="#register" ng-hide="showMenu"><i class="save icon"></i>S'enregistrer</a>
+            <a ng-class="{active:isActive('/parties')}" class="item" href="#parties" ng-show="showMenu"><i class="game icon"></i>&nbsp;Mes parties</a>
+            <a ng-class="{active:isActive('/attente')}" class="item" href="#attente" ng-show="showMenu"><i class="wait icon"></i>{{count}}&nbsp;Attente</a>
+            <a ng-class="{active:isActive('/notifications')}" class="item" href="#notifications" ng-show="showMenu" ng-controller="NotificationNavCtrl" ng-click="refreshCounter()"><div class="ui red below label"><i class="mail icon"></i>{{count}}</div>&nbsp;Notifications</a>
+            <a ng-class="{active:isActive('/dashboard')}" class="item" href="#dashboard" ng-show="showMenuAdmin"><i class="dashboard icon"></i>Dashboard</a>
+            <a ng-class="{active:isActive('/monprofil')}" class="item" href="#monprofil" ng-show="showMenu"><i class="user icon"></i>Mon profil</a>
+            <a class="item" ng-click="logout()" ng-show="showMenu"><i class="sign in icon"></i>Déconnexion</a>
+            <a ng-class="{active:isActive('/login')}" class="item" href="#login" ng-hide="showMenu"><i class="sign in icon"></i>Connexion</a>
+        </div>
+    </div>
+</nav>
+<div class="pusher">

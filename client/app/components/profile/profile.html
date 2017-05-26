@@ -1,0 +1,46 @@
+<div class="ui main text container">
+    <div class="ui text container">
+        <h2 class="ui blue center aligned icon header">
+            <i class="circular setting icon"></i>
+            Mon profil
+        </h2>
+        <form class="ui form attached fluid segment">
+            <div class="description">
+                <div class="ui stacked">
+                    <label>Nom</label>
+                    <div class="field">
+                        <div class="ui transparent input">
+                            <input type="text" name="nom" ng-value="infos.nom" ng-model="infos.nom">
+                        </div>
+                    </div>
+                    <label>Prénom</label>
+                    <div class="field">
+                        <div class="ui transparent input">
+                            <input type="text" name="prenom" ng-value="infos.prenom" ng-model="infos.prenom">
+                        </div>
+                    </div>
+                    <label>E-Mail</label>
+                    <div class="field">
+                        <div class="ui transparent input">
+                            <input type="text" name="prenom" ng-value="infos.mail" ng-model="infos.mail">
+                        </div>
+                    </div>
+                    <label>Mot de passe</label>
+                    <div class="field">
+                        <div class="ui transparent input">
+                            <input type="password" name="mdp" ng-model="infos.mdp">
+                        </div>
+                    </div>
+                    <label>Confirmation mot de passe</label>
+                    <div class="field">
+                        <div class="ui transparent input">
+                            <input type="password" name="confMdp" ng-model="infos.confMdp">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <button ng-click="updateInfo()" class="ui fluid large blue submit right labeled icon button"><i class="save icon"></i>Enregistrer</button>
+        </form>
+    </div>
+</div>

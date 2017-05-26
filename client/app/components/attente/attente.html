@@ -1,0 +1,91 @@
+<div class="ui main text container">
+    <div class="ui text container">
+        <h2 class="ui blue center aligned icon header">
+            <i class="circular save icon"></i>
+            Se mettre sur liste d'attente
+        </h2>
+        <div class="ui hidden divider"></div>
+        <form class="ui form">
+            <div class="two fields">
+                <div class="required field">
+                    <label>Nombre de personne </label>
+                    <div class="ui icon input">
+                        <input type="number" name="nbr_personne" placeholder="Nombre de personne" ng-model="attente.nbr_personne" min="1" max="20">
+                        <i class="blue info icon"></i>
+                    </div>
+                </div>
+                <div class="required field">
+                    <label>Type de sport :</label>
+                    <div class="required field">
+                        <select data-ng-options="sport as sport.nom for sport in sports track by sport.id " ng-model="attente.sport"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="required field">
+                <label>Distance Maximale (en kilomètre) </label>
+                <div class="ui icon input">
+                    <input type="number" name="distance_max" placeholder="Distance Maximale" ng-model="attente.distance_max" min="1">
+                    <i class="blue info icon"></i>
+                </div>
+            </div>
+            <button class="ui fluid large blue right labeled icon submit button" ng-click="addAttente()" value="Valider"><i class="add user icon"></i>Valider</button>
+        </form>
+    </div>
+    <h4 class="ui center aligned icon header">
+        <i class="circular inverted blue list icon"></i>
+        <div class="content">
+            <div class="ui horizontal divider">Liste d'attente</div>
+        </div>
+    </h4>
+    <div class="ui stackable equal width centered grid">
+        <div class="row">
+            <div class="ui search">
+                <div class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Rechercher...">
+                    <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+            <table class="ui blue inverted tablet center aligned unstackable selectable table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Date</th>
+                    <th>Distance Maximale</th>
+                    <th>Nombre de personne</th>
+                    <th>Sport</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="attente in attentes">
+                <tr>
+                    <td class="collapsing">
+                        <div class="ui fitted slider checkbox">
+                            <input type="checkbox" ng-model="attente.selected" ng-value="attente.id"> <label></label>
+                        </div>
+                    </td>
+                    <td>{{attente.date|date: 'dd/MM - hh:mm a'}}</td>
+                    <td>{{attente.distance_max}}</td>
+                    <td>{{attente.nbr_personne}}</td>
+                    <td>{{attente.sport.nom}}</td>
+                </tr>
+                </tbody>
+                <tfoot class="full-width">
+                <tr>
+                    <th colspan="16">
+                        <div class="ui left aligned white inverted tiny button" ng-click="supprimerAttentes()">
+                            Supprimer
+                        </div>
+                        <div class="ui tiny button" ng-click="selectAll()" id="selectAll">
+                            Selectionner tout
+                        </div>
+                        <div class="ui tiny disabled button" ng-click="deselectAll()" id="deselectAll">
+                            Deselectionner tout
+                        </div>
+                    </th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+

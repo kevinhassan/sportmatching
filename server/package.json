@@ -1,0 +1,51 @@
+{
+  "name": "webproject-server",
+  "version": "1.0.0",
+  "description": "Server web nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "init:db": "node ./database/init_db.js && sequelize db:seed:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "npm run init:db && node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kevinhassan/webproject/server"
+  },
+  "keywords": [
+    "nodejs",
+    "postgres",
+    "webproject",
+    "sequelize",
+    "restfull",
+    "api",
+    "token"
+  ],
+  "author": "kevinhassan <kevin.hassan@etu.umontpellier.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "debug": "^2.6.6",
+    "morgan": "^1.8.1",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "crypto": "0.0.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "fs": "0.0.1-security",
+    "jsonwebtoken": "^7.4.0",
+    "node-geocoder": "^3.16.0",
+    "path": "^0.12.7",
+    "pg": "^6.1.5",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.30.4",
+    "sequelize-cli": "^2.7.0",
+    "swagger-jsdoc": "^1.9.4"
+  },
+  "engines": {
+    "node": "7.9.0",
+    "npm": "4.5.0"
+  }
+}

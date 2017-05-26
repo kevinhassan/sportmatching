@@ -1,0 +1,100 @@
+<div class="ui main container">
+    <div class="ui text container">
+        <h2 class="ui blue center aligned icon header">
+            <i class="circular save icon"></i>
+            Créer une partie
+        </h2>
+        <div class="ui hidden divider"></div>
+        <form class="ui form">
+            <div class="two fields">
+                <div class="required field">
+                    <label>Nombre de participant </label>
+                    <div class="ui icon input">
+                        <input type="number" name="nombre_participant" placeholder="Nombre de participants" ng-model="partie.nbr_participant" min="1">
+                        <i class="blue info icon"></i>
+                    </div>
+                </div>
+                <div class="required field">
+                    <label>Heure de prise </label>
+                    <div class="ui input left icon">
+                        <i class="time icon"></i>
+                        <input type="time" name="heure_prise" ng-model="partie.heure_prise">
+                    </div>
+                </div>
+                <div class="required field">
+                    <label>Heure de rendu :</label>
+                    <div class="ui input left icon">
+                        <i class="time icon"></i>
+                        <input type="time" name="heure_prise" ng-model="partie.heure_rendu">
+                    </div>
+                </div>
+            </div>
+            <div class="required field">
+                <label>ID terrain (voir la carte) </label>
+                <div class="ui icon input">
+                    <input type="number" name="terrain_id" placeholder="Identifiant du terrain" ng-model="partie.terrain_id" min="1">
+                    <i class="blue info icon"></i>
+                </div>
+            </div>
+            <button class="ui fluid large blue right labeled icon submit button" ng-click="addPartie()" value="Valider"><i class="save icon"></i>Valider</button>
+        </form>
+    </div>
+    <h1 class="ui center aligned icon header">
+        <i class="circular inverted green game icon"></i>
+        <div class="content">
+            <div class="ui horizontal divider">Gestion des parties</div>
+        </div>
+    </h1>
+    <div class="ui stackable equal width centered grid">
+        <div class="row">
+            <div class="ui search">
+                <div class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Rechercher...">
+                    <i class="search icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
+            <table class="ui green inverted tablet center aligned unstackable table">
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>Heure Prise</th>
+                    <th>Heure Rendu</th>
+                    <th>Nombre Participant</th>
+                    <th>Nom du Terrain</th>
+                    <th>Sport</th>
+                </tr>
+                </thead>
+                <tbody ng-repeat="partie in parties">
+                <tr>
+                    <td class="collapsing">
+                        <div class="ui fitted slider checkbox">
+                            <input type="checkbox" ng-model="partie.selected" ng-value="partie.id"> <label></label>
+                        </div>
+                    </td>
+                    <td>{{partie.heure_prise|date: "dd/MM - hh:MM a"}}</td>
+                    <td>{{partie.heure_rendu|date: "dd/MM - hh:MM a"}}</td>
+                    <td>{{partie.nbr_participant}}</td>
+                    <td>{{partie.terrain.nom}}</td>
+                    <td>{{partie.sport.nom}}</td>
+                </tr>
+                </tbody>
+                <tfoot class="full-width">
+                <tr>
+                    <th colspan="16">
+                        <div class="ui left aligned white inverted tiny button" ng-click="supprimerParties()">
+                            Supprimer
+                        </div>
+                        <div class="ui tiny button" ng-click="selectAll()" id="selectAll">
+                            Selectionner tout
+                        </div>
+                        <div class="ui tiny disabled button" ng-click="deselectAll()" id="deselectAll">
+                            Deselectionner tout
+                        </div>
+                    </th>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
